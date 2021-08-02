@@ -3,3 +3,4 @@
 /buildSrc/build/
 /.idea/
 /build/
+/**/build/**

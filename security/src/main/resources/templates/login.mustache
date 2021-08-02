@@ -1,0 +1,11 @@
+<h1>로그인</h1>
+<form action="/login" method="POST">
+	<label for="user_id">ID:</label>
+	<input type="text" name="user_id" id="user_id"/>
+	<label for="user_pw">PW:</label>
+	<input type="password" name="user_pw" id="user_pw"/>
+	<input type="hidden" name="_csrf" value="{{_csrf.token}}">
+	<input type="submit" value="로그인"/>
+</form>
+
+{{> links}}

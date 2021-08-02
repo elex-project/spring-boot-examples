@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Spring-boot Examples
+  ~
+  ~ Copyright (c) 2021. Elex. All Rights Reserved.
+  ~ https://www.elex-project.com/
+  -->
+
 <configuration>
 	<property name="LOG_FILE" value="LogFile" />
 	<property name="LOG_DIR" value="/var/log/application" />

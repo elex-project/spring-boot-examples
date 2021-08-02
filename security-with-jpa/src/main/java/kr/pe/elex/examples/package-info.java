@@ -5,9 +5,4 @@
  * https://www.elex-project.com/
  */
 
-plugins{
-	`kotlin-dsl`
-}
-repositories {
-	gradlePluginPortal()
-}
+package kr.pe.elex.examples;

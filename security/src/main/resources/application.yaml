@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: My spring-boot project
+  mustache:
+    expose-request-attributes: true # 뷰에서 CSRF를 뿌려주기 위해서 필요합니다.
+server:
+  port: 8080

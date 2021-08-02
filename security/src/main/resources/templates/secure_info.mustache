@@ -1,0 +1,8 @@
+<h1>로그인해야 볼 수 있는 페이지</h1>
+<p>This page contains a Important message.</p>
+<form action="/logout" method="POST">
+	{{! CSRF 토큰이 없으면 에러 남. }}
+	<input type="hidden" name="_csrf" value="{{_csrf.token}}">
+	<button type="submit">로그아웃</button>
+</form>
+{{> links}}

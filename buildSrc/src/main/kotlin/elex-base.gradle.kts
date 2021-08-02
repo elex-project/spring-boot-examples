@@ -1,10 +1,19 @@
+/*
+ * Spring-boot Examples
+ *
+ * Copyright (c) 2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
+ */
+
+
 plugins {
 	java
+	idea
 }
 
-group = "com.elex-project"
+group = "kr.pe.elex.examples"
 version = "1.0-SNAPSHOT"
-description = ""//todo
+description = "Examples: Spring-boot"
 
 repositories {
 	maven {
@@ -29,12 +38,11 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 			"Implementation-Title" to project.name,
 			"Implementation-Version" to project.version,
-			"Implementation-Vendor" to "ELEX co.,pte.",
-			"Automatic-Module-Name" to "com.elex_project.${project.name}"
+			"Implementation-Vendor" to "ELEX co.,pte."
 		))
 	}
 }
@@ -60,16 +68,9 @@ tasks.javadoc {
 	(options as StandardJavadocDocletOptions).docEncoding = "UTF-8"
 
 }
+
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-	implementation("org.slf4j:slf4j-api:1.7.30")
+
 	implementation("org.jetbrains:annotations:21.0.1")
 
-	compileOnly("org.projectlombok:lombok:1.18.20")
-	annotationProcessor("org.projectlombok:lombok:1.18.20")
-	testAnnotationProcessor("org.projectlombok:lombok:1.18.20")
-
-	testImplementation("ch.qos.logback:logback-classic:1.2.3")
-	testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
-	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }

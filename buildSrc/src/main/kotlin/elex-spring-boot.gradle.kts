@@ -5,9 +5,14 @@
  * https://www.elex-project.com/
  */
 
-plugins{
-	`kotlin-dsl`
+
+plugins {
+	id("elex-base")
+
 }
-repositories {
-	gradlePluginPortal()
+
+dependencies{
+	implementation("org.jetbrains:annotations:21.0.1")
+
+
 }

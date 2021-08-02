@@ -1,0 +1,15 @@
+<h1>홈</h1>
+<p>테스트 페이지입니다.</p>
+{{#user}}
+	안녕, {{name}}.
+
+	<form action="/logout" method="POST">
+		{{! CSRF 토큰이 없으면 에러 남. }}
+		<input type="hidden" name="_csrf" value="{{_csrf.token}}">
+		<button type="submit">로그아웃</button>
+	</form>
+{{/user}}
+{{^user}}
+
+{{/user}}
+{{> links}}
