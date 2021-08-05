@@ -1,7 +1,7 @@
 /*
- * Spring-boot Examples
+ * Examples for Spring-boot
  *
- * Copyright (c) 2021. Elex. All Rights Reserved.
+ * Copyright (c) 2021-2021. Elex. All Rights Reserved.
  * https://www.elex-project.com/
  */
 

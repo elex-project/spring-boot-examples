@@ -6,4 +6,5 @@
  */
 
 rootProject.name = "spring-boot-examples"
-include("file-upload", "security", "security-with-jpa", "validation", "testing")
+include("file-upload", "security", "security-with-jpa", "validation", "testing",
+    "mqtt", "websocket", "restful")

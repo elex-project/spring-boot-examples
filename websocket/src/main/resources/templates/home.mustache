@@ -1,0 +1,108 @@
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{title}}</title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		margin:0; padding:0; border:0;
+	}
+	.layout {
+		display: grid;
+		grid-template-rows: 64px 1fr;
+		grid-template-columns: 1fr;
+		grid-template-areas: "controls" "textpane";
+		width: 100%; height: 100%;
+	}
+	.row{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		grid-area: controls;
+		background-color: orange;
+		padding: 0 16px;
+	}
+	.row h1{
+		flex-grow: 1;
+	}
+	.text-pane {
+		grid-area: textpane;
+		width: 100%; height: 100%;
+	}
+	textarea {
+		width: 100%; height: 100%;
+		overflow: auto;
+		resize: none;
+	}
+	</style>
+	<script>
+	const log = function(msg){
+		const ta = document.querySelector("#text-area");
+		ta.append(new Date().toLocaleString());
+		ta.append("\t");
+		ta.append(msg);
+		ta.append("\r\n");
+		ta.scrollTop = ta.scrollHeight;
+	};
+	const WS = {
+		websocket: null,
+		connect: function(){
+			this.websocket = new WebSocket("ws://localhost:8080/websocket");
+			this.websocket.onopen = function(ev){
+				console.log("Connected.");
+				log("Connected.");
+			};
+			this.websocket.onclose = function(ev){
+				console.log("Closed.");
+				log("Closed.");
+			};
+			this.websocket.onmessage = function(ev){
+				console.log("Rx: " + ev.data);
+				log("Rx: " + ev.data);
+			};
+			this.websocket.onerror = function(ev){
+				console.log("Error! " + ev.data);
+				log("Error! " + ev.data);
+			}
+		},
+		disconnect: function(){
+			if (!this.websocket) websocket.close();
+			console.log("Disconnected.");
+			log("Disconnected.");
+		},
+		sendMessage: function(message){
+			this.websocket.send(message);
+			console.log("Tx: " + message);
+			log("Tx: " + message);
+		}
+	};
+
+	window.addEventListener('DOMContentLoaded', (event) => {
+		WS.connect();
+	});
+
+	const send = function(){
+		const msg = document.querySelector("#text-to-send").value;
+		WS.sendMessage(msg);
+	};
+
+	</script>
+</head>
+<body>
+	<div class="layout">
+		<div class="row">
+			<h1>{{title}}</h1>
+			<input id="text-to-send" type="text" />
+			<button onclick="send();">Send</button>
+			<button onclick="WS.connect();">Connect</button>
+			<button onclick="WS.disconnect();">Disconnect</button>
+		</div>
+		<div class="text-pane">
+			<textarea id="text-area"></textarea>
+		</div>
+	</div>
+</body>
+</html>
