@@ -10,8 +10,7 @@ import java.awt.*;
 @Slf4j
 @Component
 public class MyPanel extends JPanel {
-	//@Autowired
-	//private JFrame window;
+
 	@Autowired
 	private MyService service;
 
@@ -24,7 +23,6 @@ public class MyPanel extends JPanel {
 		this.add(btn, BorderLayout.SOUTH);
 
 		btn.addActionListener(e -> {
-			//System.out.println(window.getTitle());
 			System.out.println(service.getText());
 		});
 	}

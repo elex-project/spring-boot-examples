@@ -2,9 +2,9 @@ package kr.pe.elex.examples;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.swing.*;
 
@@ -13,12 +13,10 @@ public class Application implements CommandLineRunner {
 
 	@Autowired
 	private JFrame window;
-	//@Autowired
-	//private MyPanel contentPane;
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context
-				= new SpringApplicationBuilder(Application.class)
+		new SpringApplicationBuilder(Application.class)
+				.web(WebApplicationType.NONE)
 				.headless(false)
 				.run(args);
 		//SpringApplication.run(Application.class, args);
