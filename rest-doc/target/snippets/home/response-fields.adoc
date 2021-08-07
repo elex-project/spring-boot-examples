@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`+name+`
+|`+String+`
+|Name...
+
+|`+age+`
+|`+Number+`
+|Age...
+
+|===
