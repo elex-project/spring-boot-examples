@@ -20,7 +20,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Slf4j
 @Configuration
-@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 	//@Autowired
 	//private JwtInterceptor jwtInterceptor;

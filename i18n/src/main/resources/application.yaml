@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: My spring-boot project
+  mustache:
+    expose-request-attributes: true
+  messages:
+    basename: i18n
+server:
+  port: 8080
