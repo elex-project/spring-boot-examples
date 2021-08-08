@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: My spring-boot project
+  servlet:
+    multipart:
+      max-file-size: 128KB
+      max-request-size: 128KB
+server:
+  port: 8080

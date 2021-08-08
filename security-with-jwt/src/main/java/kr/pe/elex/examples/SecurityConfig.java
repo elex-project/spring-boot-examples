@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/", "/info", "/h2-console").permitAll() // 아무나 접근 가능
 				.antMatchers("/h2-console/**").permitAll() // H2콘솔을 쓰기 위해 추가했음
-				.antMatchers("/api/signin").permitAll()
+				.antMatchers("/api/signin", "/hello/**").permitAll()
 				.antMatchers("/api/**").authenticated()
 
 				//.antMatchers("/admin").hasAnyRole("ADMIN")
@@ -62,6 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+
 		;
 
 	}
