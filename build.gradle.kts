@@ -8,7 +8,7 @@
 buildscript {
     repositories {
         maven {
-            url = uri("https://repository.elex-project.com/repository/maven")
+            setUrl("https://repository.elex-project.com/repository/maven")
         }
     }
     dependencies {
