@@ -13,8 +13,7 @@ plugins {
 }
 
 dependencies {
-    //implementation("org.springframework.boot:spring-boot-starter-mustache")
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter")
 
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
