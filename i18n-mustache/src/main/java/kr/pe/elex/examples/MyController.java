@@ -28,8 +28,9 @@ import java.util.HashMap;
 public class MyController {
 
 	@GetMapping(path = {"/"})
-	public String index() throws Exception {
-		return "home";
+	public String index(ModelAndView modelAndView) throws Exception {
+		//log.info("Data: {}", modelAndView);
+		return "main";
 	}
 
 }

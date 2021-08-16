@@ -48,12 +48,13 @@ public class WebConfig implements WebMvcConfigurer {
 	}
 
 	@Bean
-	public ResourceBundleMessageSource messageSource() {
-		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename(messagesBasename);
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource
+				= new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("classpath:/" + messagesBasename);
 		messageSource.setDefaultEncoding("UTF-8");
-		messageSource.setDefaultLocale(Locale.ENGLISH);
 		return messageSource;
 	}
+
 
 }
