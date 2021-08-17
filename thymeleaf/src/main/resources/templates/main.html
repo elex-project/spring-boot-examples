@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment :: head}"></head>
+<body>
+	<p>
+		Hello, <span th:text="${user.name}">User Name</span>.
+	</p>
+	<ul th:each="person : ${personList}">
+		<li>
+			<a th:text="${person.name}"
+			   th:attr="data-age=${person.age}"
+				th:href="@{/{name}(name=${person.name})}"></a>
+		</li>
+	</ul>
+	<footer th:include="~{fragment :: footer}"></footer>
+</body>
+</html>

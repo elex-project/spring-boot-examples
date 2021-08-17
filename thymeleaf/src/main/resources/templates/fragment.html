@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<title>Fragment</title>
+</head>
+<body>
+
+	<footer th:fragment="footer">
+		<p th:object="${copyright}">Copyright &copy; <span th:text="*{year}">2021</span>. <span th:text="*{holder}">ELEX</span>. All Rights Reserved.</p>
+	</footer>
+</body>
+</html>
